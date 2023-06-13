@@ -19,6 +19,9 @@ import { AddVaccinesCenterComponent } from './register/components/add-vaccines-c
 import { UpdateVaccinesCenterComponent } from './update/components/update-vaccines-center/update-vaccines-center.component';
 import { AddVaccinesDetailsComponent } from './register/components/add-vaccines-details/add-vaccines-details.component';
 import { OptionsComponent } from './options/options/options.component';
+import { FormComponent } from './components/form/form.component';
+import { NavbarComponent } from './componentN/navbar/navbar.component';
+import { FooterComponent } from './componentF/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +38,6 @@ import { OptionsComponent } from './options/options/options.component';
     VaccinesCenterComponent,
     AddVaccinesCenterComponent,
     UpdateVaccinesCenterComponent,
-    AddVaccinesDetailsComponent,
-    OptionsComponent,
   ],
   imports: [
     RouterModule,

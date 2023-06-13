@@ -1,0 +1,56 @@
+<div class="container">
+  <h3 class="text-center">Registro de Detalle de Vacunas</h3>
+  <form (ngSubmit) = "onSubmitForm()" #personForm = "ngForm">
+    <div class="form-group">
+      <label>Date: </label>
+      <input type="date"
+      class ="form-control"
+      id = "date"
+      [(ngModel)] = "vaccinesDetails.date"
+      required
+      name="date">
+  </div>
+
+    <div class="form-group">
+        <label>Place: </label>
+        <input type="text"
+        class ="form-control"
+        id = "place"
+        [(ngModel)] = "vaccinesDetails.place"
+        required
+        name="place">
+    </div>
+
+
+
+    <div class="form-group">
+        <label>Vaccine: </label>
+      <select name="vaccines" id="vaccines" class="form-control" [(ngModel)] = "vaccinesDetails.vaccines">
+        <option  value="vaccine.name" *ngFor="let vaccine of vaccines">{{ vaccine.name }}</option>
+      </select>
+    </div>
+
+
+
+    <div class="form-group">
+      <label>Centro de Vacunacion: </label>
+    <select name="vaccinationCenter" id="vaccinationCenter" class="form-control" [(ngModel)] = "vaccinesDetails.vaccinationCenter">
+      <option  value="vaccinesCenter.name" *ngFor="let i of vaccinesCenter">{{ i.name }}</option>
+    </select>
+    </div>
+
+    <div class="form-group">
+      <label>Persona: </label>
+    <select name="persons" id="persons" class="form-control" [(ngModel)] = "vaccinesDetails.persons">
+      <option  value="persons.name" *ngFor="let i of persons">{{ i.name }} {{i.lastname}}</option>
+    </select>
+    </div>
+
+
+
+    <button class = "btn btn-success" type="submit">Submit</button>
+
+</form>
+
+
+

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environment/environment';
 import { Persons } from '../models/Persons';
 import { VaccinesCenter } from '../models/VaccinesCenter';
+import { VaccinesDetails } from '../models/VaccineDetail';
 
 @Injectable({
   providedIn: 'root'
@@ -72,4 +73,26 @@ export class ServicesService {
   deleteVaccinesCenter(id:number):Observable<Object>{
     return this.http.delete(environment.baseUrl+'/api/vaccinationCenter/v0/vaccinationCenter/'+id,{responseType: 'text'});
   }
+
+
+   /*********METHODS CRUD FOR VACCINES-DETAILS*******************/
+   saveVaccinesDetails(vaccinesDetails:VaccinesDetails): Observable<Object>{
+    return this.http.post(environment.baseUrl+'/api/VaccineDetail/v0/vaccineDetail',vaccinesDetails,{responseType: 'text'});
+  }
+
+  getVaccinesDetailsById(id:number):Observable<VaccinesDetails>{
+    return this.http.get<VaccinesDetails>(environment.baseUrl+'/api/VaccineDetail/v0/vaccineDetail/'+id);
+  }
+
+  updateVaccinesDetails(id:number,vaccinesDetails:VaccinesDetails):Observable<Object>{
+    return this.http.put(environment.baseUrl+'/api/VaccineDetail/v0/vaccineDetail/'+id,vaccinesDetails,{responseType: 'text'});
+  }
+  getAllVaccinesDetails():Observable<VaccinesDetails[]>{
+    return this.http.get<VaccinesDetails[]>(environment.baseUrl+'/api/VaccineDetail/v0/vaccineDetail')
+  }
+
+  deleteVaccinesDetails(id:number):Observable<Object>{
+    return this.http.delete(environment.baseUrl+'/api/VaccineDetail/v0/vaccineDetail/'+id,{responseType: 'text'});
+  }
+
 }

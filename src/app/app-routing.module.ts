@@ -10,6 +10,7 @@ import { UpdatePersonsComponent } from './update/components/update-persons/updat
 import { VaccinesCenterComponent } from './tables/components/vaccines-center/vaccines-center.component';
 import { AddVaccinesCenterComponent } from './register/components/add-vaccines-center/add-vaccines-center.component';
 import { UpdateVaccinesCenterComponent } from './update/components/update-vaccines-center/update-vaccines-center.component';
+import { AddVaccinesDetailsComponent } from './register/components/add-vaccines-details/add-vaccines-details.component';
 
 
 const routes: Routes = [
@@ -17,13 +18,17 @@ const routes: Routes = [
   component:RegisterVaccinesComponent,
   },
   {
-    path:'registrar-personas',
-    component:AddPersonsComponent
-    },
-    {
-    path:'registrar-centros de vacunacion',
-    component:AddVaccinesCenterComponent
-    },
+  path:'registrar-personas',
+  component:AddPersonsComponent
+  },
+  {
+  path:'registrar-centros de vacunacion',
+  component:AddVaccinesCenterComponent
+  },
+  {
+  path: 'registrar-detalle de vacunacion',
+  component:AddVaccinesDetailsComponent
+  },
   {path:'vacunas',
    component:VaccineTableComponent},
 

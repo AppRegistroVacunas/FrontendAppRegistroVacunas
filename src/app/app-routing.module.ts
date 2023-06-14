@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterVaccinesComponent } from './register/components/add-vaccines/add-vaccines.component';
 import { VaccineTableComponent } from './tables/components/vaccine-table/vaccine-table.component';
@@ -11,9 +11,16 @@ import { VaccinesCenterComponent } from './tables/components/vaccines-center/vac
 import { AddVaccinesCenterComponent } from './register/components/add-vaccines-center/add-vaccines-center.component';
 import { UpdateVaccinesCenterComponent } from './update/components/update-vaccines-center/update-vaccines-center.component';
 import { AddVaccinesDetailsComponent } from './register/components/add-vaccines-details/add-vaccines-details.component';
+import { FormComponent } from './components/form/form.component';
+import { LoginComponent } from './login/login.component';
+import { OptionsComponent } from './options/options/options.component';
 
 
 const routes: Routes = [
+  {
+    path:'',
+    component:FormComponent
+  },
   {path:'registrar-vacunas',
   component:RegisterVaccinesComponent,
   },
@@ -47,6 +54,14 @@ const routes: Routes = [
    {
     path:'actualizar-centros/:id',
     component:UpdateVaccinesCenterComponent
+   },
+   {
+    path:'login',
+    component:LoginComponent
+   },
+   {
+    path:'opciones',
+    component:OptionsComponent
    }
 
 

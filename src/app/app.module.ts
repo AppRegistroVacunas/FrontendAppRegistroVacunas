@@ -22,6 +22,8 @@ import { OptionsComponent } from './options/options/options.component';
 import { FormComponent } from './components/form/form.component';
 import { NavbarComponent } from './componentN/navbar/navbar.component';
 import { FooterComponent } from './componentF/footer/footer.component';
+import { AddWorkersComponent } from './register/components/add-workers/add-workers.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,13 @@ import { FooterComponent } from './componentF/footer/footer.component';
     VaccinesCenterComponent,
     AddVaccinesCenterComponent,
     UpdateVaccinesCenterComponent,
+    AddVaccinesDetailsComponent,
+    OptionsComponent,
+    FormComponent,
+    NavbarComponent,
+    FooterComponent,
+    AddWorkersComponent,
+    LoginComponent,
   ],
   imports: [
     RouterModule,
@@ -51,3 +60,4 @@ import { FooterComponent } from './componentF/footer/footer.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

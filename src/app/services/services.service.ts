@@ -6,6 +6,7 @@ import { environment } from 'src/environment/environment';
 import { Persons } from '../models/Persons';
 import { VaccinesCenter } from '../models/VaccinesCenter';
 import { VaccinesDetails } from '../models/VaccineDetail';
+import { Workers } from '../models/Workers';
 
 @Injectable({
   providedIn: 'root'
@@ -94,5 +95,26 @@ export class ServicesService {
   deleteVaccinesDetails(id:number):Observable<Object>{
     return this.http.delete(environment.baseUrl+'/api/VaccineDetail/v0/vaccineDetail/'+id,{responseType: 'text'});
   }
+
+
+    /*********METHODS CRUD FOR WORKERS*******************/
+    saveWorkers(workers:Workers): Observable<Object>{
+      return this.http.post(environment.baseUrl+'/workers/',workers,{responseType: 'text'});
+    }
+
+    getWorkersById(id:number):Observable<Workers>{
+      return this.http.get<Workers>(environment.baseUrl+'/workers/'+id);
+    }
+
+    updateWorkers(id:number,workers:Workers):Observable<Object>{
+      return this.http.put(environment.baseUrl+'/workers/'+id,workers,{responseType: 'text'});
+    }
+    getAllWorkers():Observable<Workers[]>{
+      return this.http.get<Workers[]>(environment.baseUrl+'/workers/')
+    }
+
+    deleteWorkers(id:number):Observable<Object>{
+      return this.http.delete(environment.baseUrl+'/workers/'+id,{responseType: 'text'});
+    }
 
 }

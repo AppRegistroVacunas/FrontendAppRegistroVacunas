@@ -1,4 +1,4 @@
-export class VaccinesDetails {
+export class VaccineDetail {
   id: number
   date: string
   place: string

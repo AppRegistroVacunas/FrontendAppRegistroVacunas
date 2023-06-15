@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Persons, VaccinationCenter, VaccinesDetails } from 'src/app/models/VaccineDetail';
+import { Persons, VaccinationCenter, VaccineDetail } from 'src/app/models/VaccineDetail';
 import { Vaccines } from 'src/app/models/Vaccines';
 import { ServicesService } from 'src/app/services/services.service';
 
@@ -10,10 +10,14 @@ import { ServicesService } from 'src/app/services/services.service';
   styleUrls: ['./add-vaccines-details.component.scss']
 })
 export class AddVaccinesDetailsComponent {
-  vaccinesDetails:VaccinesDetails = new VaccinesDetails();
+  vaccinesDetails:VaccineDetail = new VaccineDetail();
   vaccines:Vaccines[];
   vaccinesCenter:VaccinationCenter[];
   persons:Persons[];
+
+  vaccine:string
+  center:string
+  person:string
 
 
   constructor(
@@ -26,6 +30,7 @@ export class AddVaccinesDetailsComponent {
     this.getVaccines();
     this.getVaccinesCenter();
     this.getPersons();
+    this.saveVaccinesDetails();
   }
 
   saveVaccinesDetails(){
@@ -34,7 +39,6 @@ export class AddVaccinesDetailsComponent {
         if(res=="the operation was successful"){
           this.redirect();
         }else{
-
         }
 
       },error: () => {
@@ -47,7 +51,7 @@ export class AddVaccinesDetailsComponent {
 
 
   redirect(){
-    this.router.navigate(['/centros']);
+    this.router.navigate(['/detalle de vacuna']);
   }
 
   onSubmitForm(){
@@ -55,14 +59,14 @@ export class AddVaccinesDetailsComponent {
     this.saveVaccinesDetails();
   }
 
-  private getVaccines(){
+  getVaccines(){
     this.service.getAllVaccines().subscribe(res=>
       {
         this.vaccines=res;
       })
   }
 
-  private getVaccinesCenter(){
+  getVaccinesCenter(){
     this.service.getAllVaccinesCenter().subscribe(res=>
       {
         this.vaccinesCenter=res;

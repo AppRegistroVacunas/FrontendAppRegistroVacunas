@@ -25,8 +25,8 @@
 
     <div class="form-group">
         <label>Vaccine: </label>
-      <select name="vaccines" id="vaccines" class="form-control" [(ngModel)] = "vaccinesDetails.vaccines">
-        <option  value="vaccine.name" *ngFor="let vaccine of vaccines">{{ vaccine.name }}</option>
+      <select name="vaccines" id="id" class="form-control" [(ngModel)] = "vaccine">
+        <option  [ngValue]="i.id" *ngFor="let i of vaccines">{{ i.name }}</option>
       </select>
     </div>
 
@@ -34,15 +34,15 @@
 
     <div class="form-group">
       <label>Centro de Vacunacion: </label>
-    <select name="vaccinationCenter" id="vaccinationCenter" class="form-control" [(ngModel)] = "vaccinesDetails.vaccinationCenter">
-      <option  value="vaccinesCenter.name" *ngFor="let i of vaccinesCenter">{{ i.name }}</option>
+    <select name="vaccinesCenter" id="id" class="form-control" [(ngModel)] = "center">
+      <option  [ngValue]="i.id" *ngFor="let i of vaccinesCenter">{{ i.name }}</option>
     </select>
     </div>
 
     <div class="form-group">
       <label>Persona: </label>
-    <select name="persons" id="persons" class="form-control" [(ngModel)] = "vaccinesDetails.persons">
-      <option  value="persons.name" *ngFor="let i of persons">{{ i.name }} {{i.lastname}}</option>
+    <select name="persons" id="dni" class="form-control" [(ngModel)] = "person">
+      <option  [ngValue]="i.dni" *ngFor="let i of persons">{{ i.name }} {{i.lastname}}</option>
     </select>
     </div>
 

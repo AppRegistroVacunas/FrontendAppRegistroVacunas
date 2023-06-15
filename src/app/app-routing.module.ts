@@ -14,6 +14,8 @@ import { AddVaccinesDetailsComponent } from './register/components/add-vaccines-
 import { FormComponent } from './components/form/form.component';
 import { LoginComponent } from './login/login.component';
 import { OptionsComponent } from './options/options/options.component';
+import { ShotVaccineDetailComponent } from './shot-vaccine-detail/shot-vaccine-detail.component';
+import { VaccineDetailsTableComponent } from './tables/components/vaccine-details-table/vaccine-details-table.component';
 
 
 const routes: Routes = [
@@ -45,10 +47,14 @@ const routes: Routes = [
     path:'centros',
     component:VaccinesCenterComponent
   },
+  {
+    path:'detalle de vacuna',
+    component:VaccineDetailsTableComponent
+  },
   {path:'actualizar-vacuna/:id',
    component:UpdateVaccinesComponent},
    {
-    path:'actualizar-persona/:id',
+    path:'actualizar-persona/:dni',
     component:UpdatePersonsComponent
    },
    {
@@ -62,8 +68,11 @@ const routes: Routes = [
    {
     path:'opciones',
     component:OptionsComponent
+   },
+   {
+    path:'detalle de usuario/:dni',
+    component:ShotVaccineDetailComponent
    }
-
 
 ];
 

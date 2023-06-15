@@ -24,6 +24,8 @@ import { NavbarComponent } from './componentN/navbar/navbar.component';
 import { FooterComponent } from './componentF/footer/footer.component';
 import { AddWorkersComponent } from './register/components/add-workers/add-workers.component';
 import { LoginComponent } from './login/login.component';
+import { ShotVaccineDetailComponent } from './shot-vaccine-detail/shot-vaccine-detail.component';
+import { VaccineDetailsTableComponent } from './tables/components/vaccine-details-table/vaccine-details-table.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { LoginComponent } from './login/login.component';
     FooterComponent,
     AddWorkersComponent,
     LoginComponent,
+    ShotVaccineDetailComponent,
+    VaccineDetailsTableComponent,
   ],
   imports: [
     RouterModule,

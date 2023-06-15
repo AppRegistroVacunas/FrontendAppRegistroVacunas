@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environment/environment';
 import { Persons } from '../models/Persons';
 import { VaccinesCenter } from '../models/VaccinesCenter';
-import { VaccinesDetails } from '../models/VaccineDetail';
-import { Workers } from '../models/Workers';
+import { VaccineDetail } from '../models/VaccineDetail';
+
 
 @Injectable({
   providedIn: 'root'
@@ -45,7 +45,7 @@ export class ServicesService {
   }
 
   updatePersons(dni:string,persons:Persons):Observable<Object>{
-    return this.http.put(environment.baseUrl+'/api/persons/v0/persons'+dni,persons,{responseType: 'text'});
+    return this.http.put(environment.baseUrl+'/api/persons/v0/persons/'+dni,persons,{responseType: 'text'});
   }
   getAllPersons():Observable<Persons[]>{
     return this.http.get<Persons[]>(environment.baseUrl+'/api/persons/v0/persons')
@@ -77,19 +77,19 @@ export class ServicesService {
 
 
    /*********METHODS CRUD FOR VACCINES-DETAILS*******************/
-   saveVaccinesDetails(vaccinesDetails:VaccinesDetails): Observable<Object>{
+   saveVaccinesDetails(vaccinesDetails:VaccineDetail): Observable<Object>{
     return this.http.post(environment.baseUrl+'/api/VaccineDetail/v0/vaccineDetail',vaccinesDetails,{responseType: 'text'});
   }
 
-  getVaccinesDetailsById(id:number):Observable<VaccinesDetails>{
-    return this.http.get<VaccinesDetails>(environment.baseUrl+'/api/VaccineDetail/v0/vaccineDetail/'+id);
+  getVaccinesDetailsById(id:number):Observable<VaccineDetail>{
+    return this.http.get<VaccineDetail>(environment.baseUrl+'/api/VaccineDetail/v0/vaccineDetail/'+id);
   }
 
-  updateVaccinesDetails(id:number,vaccinesDetails:VaccinesDetails):Observable<Object>{
+  updateVaccinesDetails(id:number,vaccinesDetails:VaccineDetail):Observable<Object>{
     return this.http.put(environment.baseUrl+'/api/VaccineDetail/v0/vaccineDetail/'+id,vaccinesDetails,{responseType: 'text'});
   }
-  getAllVaccinesDetails():Observable<VaccinesDetails[]>{
-    return this.http.get<VaccinesDetails[]>(environment.baseUrl+'/api/VaccineDetail/v0/vaccineDetail')
+  getAllVaccinesDetails():Observable<VaccineDetail[]>{
+    return this.http.get<VaccineDetail[]>(environment.baseUrl+'/api/VaccineDetail/v0/vaccineDetail')
   }
 
   deleteVaccinesDetails(id:number):Observable<Object>{
@@ -98,7 +98,7 @@ export class ServicesService {
 
 
     /*********METHODS CRUD FOR WORKERS*******************/
-    saveWorkers(workers:Workers): Observable<Object>{
+    /*saveWorkers(workers:Workers): Observable<Object>{
       return this.http.post(environment.baseUrl+'/workers/',workers,{responseType: 'text'});
     }
 
@@ -116,5 +116,5 @@ export class ServicesService {
     deleteWorkers(id:number):Observable<Object>{
       return this.http.delete(environment.baseUrl+'/workers/'+id,{responseType: 'text'});
     }
-
+*/
 }
